@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { ButtonPrimary } from "../../Components/Button/ButtonPrimary";
 import { InfoPrimary } from "../../Components/Information/InfoPrimary";
+import { SectionContext } from "../../Context/section";
 
-const LoginUser = ({ setPage, isNew, user }) => {
+const LoginUser = ({isNew, user }) => {
+  const { setPage } = useContext(SectionContext);
+
   if (isNew) {
     return (
       <>

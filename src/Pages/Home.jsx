@@ -1,14 +1,15 @@
 import { All } from "../Logic/Todos/All"
 import { Footer } from "../Pages/Footer"
-import { getUser } from "../Global/storage"
 import { NewUser } from "../Logic/Todos/NewUser"
-const isNew = getUser().isNew
+import { useContext } from "react"
+import { SectionContext } from "../Context/section"
 
-const Home = ({setPage}) => {
+const Home = () => {
+  const { hasTodos } = useContext(SectionContext)
   return (
     <>
-      {isNew && <NewUser/>}
-      {!isNew && <All/>}
+      {!hasTodos && <NewUser/>}
+      {hasTodos && <All/>}
       <Footer/>
     </>
   )

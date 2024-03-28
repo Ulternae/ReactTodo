@@ -1,6 +1,6 @@
-const TitleSecondary = ({text}) => {
+const TitleSecondary = ({text , className}) => {
   return (
-    <h2 className="TitleSecondary">{text}</h2>
+    <h2 className={`TitleSecondary ${className}`}>{text}</h2>
   )
 }
 

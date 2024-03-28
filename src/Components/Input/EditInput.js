@@ -1,11 +1,11 @@
 import { TitleSecondary } from "../Title/TitleSecondary"
 
-const EditInput = ({ accion, value, placeholder, text, type }) => {
+const EditInput = ({ accion, value, placeholder, text, className }) => {
 
   return (
     <div>
       <TitleSecondary text={text}/>
-      <input
+      <input className={`input ${className}`}
         onChange={accion}
         value={value}
         placeholder={placeholder}>

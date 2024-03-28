@@ -1,5 +1,8 @@
+import { getUser } from "../Global/storage"
+
 const updateUserStorage = (data) => {
-  const user = {
+  const oldData = getUser()
+  const newData = {
     isNew : false,
     userName : data[0],
     nickName : data[1],
@@ -7,7 +10,9 @@ const updateUserStorage = (data) => {
     language : data[3],
     icon : data[4]
   }
-  localStorage.setItem('user' , JSON.stringify(user))
+
+  const updatedData = { ...oldData, ...newData };
+  localStorage.setItem('user' , JSON.stringify(updatedData))
 
 }
 export { updateUserStorage }

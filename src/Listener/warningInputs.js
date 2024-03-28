@@ -9,6 +9,8 @@ const warningInputs = (inputName, setWarning, image) => {
   if (result) {
     updateUserStorage([...inputValues , image])
   }
+
+  return !!result
 }
 
 export { warningInputs }

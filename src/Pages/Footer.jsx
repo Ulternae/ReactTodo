@@ -4,19 +4,19 @@ import btnPending from '../Assets/btnPending.svg'
 import btnAdd from '../Assets/btnAdd.svg'
 import btnUser from '../Assets/btnUser.svg'
 import btnHome from '../Assets/btnHome.svg'
-import { ListenerAddTodo } from "../Listener/addTodo"
-import React from "react"
+import React, { useContext } from "react"
+import { SectionContext } from "../Context/section"
+
 const Footer = () => {
-  React.useEffect(() => {
-    console.log('Foooter')
-  }, [])
+  const { setPage, setOpenModal } = useContext(SectionContext)
+
   return (
   <div className="FooterContainer">
-    <ButtonIcons icon={btnCompleted}/>
-    <ButtonIcons icon={btnPending}/>
-    <ButtonIcons icon={btnAdd} accion={(e) => ListenerAddTodo(e)}/>
-    <ButtonIcons icon={btnUser}/>
-    <ButtonIcons icon={btnHome}/>
+    <ButtonIcons icon={btnCompleted} accion={() => setPage('COMPLETED')}/>
+    <ButtonIcons icon={btnPending} accion={() => setPage('PENDING')}/>
+    <ButtonIcons icon={btnAdd} accion={() => setOpenModal(true)}/>
+    <ButtonIcons icon={btnUser} accion={() => setPage('ACCOUNT')}/>
+    <ButtonIcons icon={btnHome} accion={() => setPage('HOME')}/>
   </div>)
 }
 
