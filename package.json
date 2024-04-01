@@ -33,6 +33,6 @@
   },
   "homepage": "http://Ulternae.github.io/ReactTodo",
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^4.0.0"
   }
 }
