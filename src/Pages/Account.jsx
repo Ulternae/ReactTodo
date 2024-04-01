@@ -1,19 +1,17 @@
-import { useContext } from "react"
-import { AccountCreate } from "../Logic/Account/AccountCreate"
-import { AccountView } from "../Logic/Account/AccountView"
-import { IconsContext } from "../Context/icons"
+import { useContext } from "react";
+import { AccountCreate } from "../Logic/Account/AccountCreate";
+import { AccountView } from "../Logic/Account/AccountView";
+import { IconsContext } from "../Context/icons";
 
 const Account = () => {
+  const { newUser } = useContext(IconsContext);
 
-  const { newUser } = useContext(IconsContext)
-  console.log(newUser)
   return (
-      <div className="Container">
-        {newUser && <AccountCreate/>}
-        {!newUser && <AccountView/>}
-      </div>
+    <div className="Container">
+      {newUser && <AccountCreate />}
+      {!newUser && <AccountView />}
+    </div>
+  );
+};
 
-  )
-}
-
-export { Account } 
+export { Account };

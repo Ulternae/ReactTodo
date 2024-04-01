@@ -133,7 +133,16 @@ const All = () => {
             {renderCongratulations()}
           </ItemsContainer>}
 
-        {/* <img className="TodosContainerTrahs" src={trahsPopover} alt="trahs" key={1} /> */}
+        <img 
+          className="TodosContainerTrahs"
+          src={trahsPopover} 
+          alt="trahs" 
+          key={1} 
+          onClick={() => {
+            localStorage.setItem('todos' , '[]')
+            setTodos([])
+          }}
+        />
       </div >
     </>
 

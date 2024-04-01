@@ -1,21 +1,4 @@
 import { imagesIcons } from "./images"
-// const user = {
-//   isNew : true,
-//   hasTodos: false,
-//   userName : 'Juan Alberto Alcaida Acacias',
-//   nickName : 'Juancho',
-//   password : 12348,
-//   language : 'English',
-//   icon : 'https://generative-ai-ultisaer.s3.sa-east-1.amazonaws.com/images/cosmic_astronaut_with_vibrant_hues.png'
-// }
-// localStorage.setItem('user' , JSON.stringify(user))
-
-
-// const defaultTodos = [
-//   { text: 'Completado', completed: true, id: crypto.randomUUID() },
-//   { text: 'Pendiente', completed: false, id: crypto.randomUUID() },
-// ]
-// localStorage.setItem('todos', JSON.stringify(defaultTodos))
 
 const ItemsStorage = {
   USER: 'user', 

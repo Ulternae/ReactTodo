@@ -8,15 +8,19 @@ import React, { useContext } from "react"
 import { SectionContext } from "../Context/section"
 
 const Footer = () => {
-  const { setPage, setOpenModal } = useContext(SectionContext)
+  const { setPage, setOpenModal, setTodosFilter } = useContext(SectionContext)
+  const btnHomeSet = (filter) => {
+    setPage('HOME') 
+    setTodosFilter(filter)
+  }
 
   return (
   <div className="FooterContainer">
-    <ButtonIcons icon={btnCompleted} accion={() => setPage('COMPLETED')}/>
-    <ButtonIcons icon={btnPending} accion={() => setPage('PENDING')}/>
+    <ButtonIcons icon={btnCompleted} accion={() => btnHomeSet('COMPLETED')}/>
+    <ButtonIcons icon={btnPending} accion={() => btnHomeSet('PENDING')}/>
     <ButtonIcons icon={btnAdd} accion={() => setOpenModal(true)}/>
     <ButtonIcons icon={btnUser} accion={() => setPage('ACCOUNT')}/>
-    <ButtonIcons icon={btnHome} accion={() => setPage('HOME')}/>
+    <ButtonIcons icon={btnHome} accion={() => btnHomeSet('HOME')}/>
   </div>)
 }
 

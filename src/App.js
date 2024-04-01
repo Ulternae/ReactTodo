@@ -1,6 +1,6 @@
 import { Login } from './Pages/Login';
 import { Home } from './Pages/Home'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Layout } from './Pages/Layout';
 import { ContentApp } from './Components/Content/ContentApp';
 import { Account } from './Pages/Account';
@@ -26,12 +26,6 @@ const App = () => {
   const [newUser, setNewUser] = useState(userIsNew)
   const [todosFilter, setTodosFilter] = useState('ALL')
 
-  useEffect(() => {
-    if (page === 'HOME') setTodosFilter('ALL')
-    if (page === 'COMPLETED') setTodosFilter('COMPLETED')
-    if (page === 'PENDING') setTodosFilter('PENDING')
-  }, [page])
-
   return (
     <SectionContext.Provider
       value={{
@@ -45,6 +39,7 @@ const App = () => {
         setHasTodos,
         setOpenIcons,
         todosFilter,
+        setTodosFilter
       }}>
       <IconsContext.Provider
         value={{
@@ -60,8 +55,6 @@ const App = () => {
           {page === 'LOGIN' && <Login />}
           {page === 'HOME' && <Home />}
           {page === 'ACCOUNT' && <Account />}
-          {page === 'COMPLETED' && <Home />}
-          {page === 'PENDING' && <Home />}
         </ContentApp>
 
         {openModal && (
