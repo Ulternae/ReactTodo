@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ReactTodo/static/css/main.e1008293.css",
-    "main.js": "/ReactTodo/static/js/main.2768efb9.js",
+    "main.css": "/ReactTodo/static/css/main.67a3f047.css",
+    "main.js": "/ReactTodo/static/js/main.d815b285.js",
     "static/media/iconCongratulations.svg": "/ReactTodo/static/media/iconCongratulations.39e05cacfae350fc7a4942942cb336d1.svg",
     "static/media/trahsPopover.svg": "/ReactTodo/static/media/trahsPopover.609423f0688da9d60b1cab9f0e6b025c.svg",
     "static/media/iconSearch.svg": "/ReactTodo/static/media/iconSearch.8d9f8bc1462399e705f1b44ff1a2631b.svg",
@@ -17,11 +17,11 @@
     "static/media/iconDelete.svg": "/ReactTodo/static/media/iconDelete.df2864adddd0df4bbeabf97b01bc4bb7.svg",
     "static/media/iconBack.svg": "/ReactTodo/static/media/iconBack.b3533188f67496a6d71efdae0e6bbcf6.svg",
     "static/media/btnAddComplete.svg": "/ReactTodo/static/media/btnAddComplete.8bc7e427371c3cf18b92e254a04863a0.svg",
-    "main.e1008293.css.map": "/ReactTodo/static/css/main.e1008293.css.map",
-    "main.2768efb9.js.map": "/ReactTodo/static/js/main.2768efb9.js.map"
+    "main.67a3f047.css.map": "/ReactTodo/static/css/main.67a3f047.css.map",
+    "main.d815b285.js.map": "/ReactTodo/static/js/main.d815b285.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1008293.css",
-    "static/js/main.2768efb9.js"
+    "static/css/main.67a3f047.css",
+    "static/js/main.d815b285.js"
   ]
 }
