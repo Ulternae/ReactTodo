@@ -1,15 +1,12 @@
-import { All } from "../Logic/Todos/All"
+import { TodosUser } from "../Logic/Todos/TodosUser"
 import { Footer } from "../Pages/Footer"
 import { NewUser } from "../Logic/Todos/NewUser"
-import { useContext } from "react"
-import { SectionContext } from "../Context/section"
 
-const Home = () => {
-  const { hasTodos } = useContext(SectionContext)
+const Home = ({ hasTodos }) => {
   return (
     <>
       {!hasTodos && <NewUser/>}
-      {hasTodos && <All/>}
+      {hasTodos && <TodosUser/>}
       <Footer/>
     </>
   )

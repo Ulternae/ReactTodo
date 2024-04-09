@@ -8,7 +8,7 @@ import { Warning } from "../../Components/Information/Warning"
 import { warningInputs } from "../../Listener/warningInputs"
 import { IconsContext } from "../../Context/icons"
 import { ButtonIcons } from "../../Components/Button/ButtonIcons"
-import { SectionContext } from '../../Context/section'
+import { GlobalContext } from '../../Context/global'
 
 const dataCreateAccount = [
   { text: 'Full Name', placeholder: "Enter your full name" },
@@ -19,8 +19,13 @@ const dataCreateAccount = [
 
 const AccountCreate = () => {
   const { iconSelect, setNewUser} = useContext(IconsContext)
-  const { setPage } = useContext(SectionContext)
+  const { setPage } = useContext(GlobalContext)
   const [warning, setWarning] = useState(false)
+
+  const successCreateAccount = () => {
+    const success = warningInputs('.AccountCreate_Section div input', setWarning, iconSelect)
+    if (success) setNewUser(false)
+  }
   return (
     <>
       <ButtonIcons 
@@ -38,10 +43,7 @@ const AccountCreate = () => {
 
       <ButtonPrimary
         text={'Create Account'}
-        accion = {() => {
-          const success = warningInputs('.AccountCreate_Section div input', setWarning, iconSelect)
-          if (success) setNewUser(false)
-        }}
+        accion = {() => successCreateAccount()}
       />
 
       { warning && <Warning text={'The information is no completed'}/>}

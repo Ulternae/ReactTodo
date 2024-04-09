@@ -8,7 +8,7 @@ const Search = ({ accion, value }) => {
         onChange={accion}
         className="Search"
         value={value}
-        placeholder="Cortar onions">
+        placeholder="Find your todos">
       </input>
       <img src={iconSearch} alt="search"></img>
     </div>

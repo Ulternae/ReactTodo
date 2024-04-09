@@ -1,14 +1,11 @@
+import iconClose from "../Assets/iconClose.svg";
 import { TitleSecondary } from "../Components/Title/TitleSecondary";
 import { ButtonIcons } from "../Components/Button/ButtonIcons";
-import iconClose from "../Assets/iconClose.svg";
-import { useContext } from "react";
-import { SectionContext } from "../Context/section";
 import { ButtonPrimary } from "../Components/Button/ButtonPrimary";
 import { ListenerAddTodo } from "../Listener/addTodo";
 
-const AddTodos = () => {
-  const { setOpenModal, setTodos, setHasTodos } = useContext(SectionContext);
-
+const AddTodos = ({ setTodos, setHasTodos, setOpenModal } ) => {
+  
   const TextArea = () => document.querySelector(".AddTodos_textArea");
 
   return (

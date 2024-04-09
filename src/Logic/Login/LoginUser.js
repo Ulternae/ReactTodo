@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { ButtonPrimary } from "../../Components/Button/ButtonPrimary";
 import { InfoPrimary } from "../../Components/Information/InfoPrimary";
-import { SectionContext } from "../../Context/section";
+import { GlobalContext } from "../../Context/global";
 
 const LoginUser = ({isNew, user }) => {
-  const { setPage } = useContext(SectionContext);
+  const { setPage } = useContext(GlobalContext);
 
   if (isNew) {
     return (
@@ -13,7 +13,7 @@ const LoginUser = ({isNew, user }) => {
         <ButtonPrimary
           text={"Let’s Start"}
           accion={() => setPage("HOME")}
-        ></ButtonPrimary>
+        />
       </>
     );
   }

@@ -1,77 +1,52 @@
 import { Login } from './Pages/Login';
 import { Home } from './Pages/Home'
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Layout } from './Pages/Layout';
 import { ContentApp } from './Components/Content/ContentApp';
 import { Account } from './Pages/Account';
-import { getUser } from "./Global/storage"
-import { SectionContext } from './Context/section';
 import { Modal } from './Pages/Modal';
 import { AddTodos } from './Pages/AddTodos';
 import { SelectIconsPage } from './Pages/SelectIconsPage';
-import { imagesIcons } from './Global/images';
+import { GlobalContext } from './Context/global';
 import { IconsContext } from './Context/icons';
-
+import { SectionContext } from './Context/section';
 
 const App = () => {
-  const userIsNew = getUser().isNew === undefined ? true : getUser().isNew;
-
-
-  const [page, setPage] = useState('LOGIN');
-  const [openModal, setOpenModal] = useState(false)
-  const [openIcons, setOpenIcons] = useState(false)
-  const [todos, setTodos] = useState([])
-  const [hasTodos, setHasTodos] = useState(getUser().hasTodos)
-  const [iconSelect, setIconSelect] = useState(imagesIcons[Math.floor(Math.random() * imagesIcons.length)])
-  const [newUser, setNewUser] = useState(userIsNew)
-  const [todosFilter, setTodosFilter] = useState('ALL')
+  const { page, openModal, openIcons, setOpenModal, setOpenIcons } = useContext(GlobalContext)
+  const { newUser, iconSelect, setIconSelect } = useContext(IconsContext);
+  const { hasTodos, setTodos, setHasTodos } = useContext(SectionContext)
 
   return (
-    <SectionContext.Provider
-      value={{
-        page,
-        setPage,
-        openModal,
-        setOpenModal,
-        todos,
-        setTodos,
-        hasTodos,
-        setHasTodos,
-        setOpenIcons,
-        todosFilter,
-        setTodosFilter
-      }}>
-      <IconsContext.Provider
-        value={{
-          iconSelect,
-          setIconSelect,
-          newUser,
-          setNewUser
-        }} >
+    <>
 
-        <Layout opacity={page === 'LOGIN' ? 1 : 0.2} />
+      <Layout opacity={page === 'LOGIN' ? 1 : 0.2} />
 
-        <ContentApp>
-          {page === 'LOGIN' && <Login />}
-          {page === 'HOME' && <Home />}
-          {page === 'ACCOUNT' && <Account />}
-        </ContentApp>
+      <ContentApp 
+        page={page}
+        onLogin = {() => <Login />}
+        onAccount = {() => <Account newUser={newUser} />}
+        onHome = {() => <Home hasTodos={hasTodos} />}
+      />
 
-        {openModal && (
-          <Modal >
-            <AddTodos />
-          </Modal>
-        )}
+      {openModal && (
+        <Modal >
+          <AddTodos
+            setTodos={setTodos}
+            setHasTodos={setHasTodos}
+            setOpenModal={setOpenModal} />
+        </Modal>
+      )}
 
-        {openIcons && (
-          <Modal >
-            <SelectIconsPage />
-          </Modal>
-        )}
-      </IconsContext.Provider>
+      {openIcons && (
+        <Modal >
+          <SelectIconsPage
+            setOpenIcons={setOpenIcons}
+            iconSelect={iconSelect}
+            setIconSelect={setIconSelect} />
+        </Modal>
+      )}
 
-    </SectionContext.Provider>
-
+    </>
   );
 }
 

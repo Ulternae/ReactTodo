@@ -1,10 +1,14 @@
-const ItemsContainer  = ({children}) => {
+import React from "react";
+
+const ItemsContainer = ({ children }) => {
+
   return (
     <div className="ItemsContainer">
-      {children}
+      {React.Children.map(children, child => 
+        child && React.cloneElement(child)
+      )}
     </div>
+  );
+};
 
-  )
-}
-
-export { ItemsContainer }
+export { ItemsContainer };

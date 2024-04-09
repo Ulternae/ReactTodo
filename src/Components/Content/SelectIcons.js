@@ -1,9 +1,9 @@
 import { useContext } from 'react'
 import iconSelect from '../../Assets/iconSelect.svg'
-import { SectionContext } from '../../Context/section'
+import { GlobalContext } from '../../Context/global'
 const SelectIcons = ({ img, isSelect }) => {
 
-  const { setOpenIcons } = useContext(SectionContext)
+  const { setOpenIcons } = useContext(GlobalContext)
 
   return (
     <div className='SelectIcons_Container'>

@@ -1,12 +1,7 @@
-import { useContext } from "react";
 import { ButtonPrimary } from "../Components/Button/ButtonPrimary";
 import { imagesIcons } from "../Global/images";
-import { IconsContext } from "../Context/icons";
-import { SectionContext } from "../Context/section";
 
-const SelectIconsPage = () => {
-  const { setOpenIcons } = useContext(SectionContext)
-  const { iconSelect , setIconSelect } = useContext(IconsContext)
+const SelectIconsPage = ({ setOpenIcons, iconSelect , setIconSelect }) => {
   
   const icons = imagesIcons;
   const renderIcons = () => {

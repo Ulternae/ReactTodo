@@ -313,7 +313,7 @@
 }
 
 @layer Congratulations {
-  .CongratulationsContainer {
+  .ContainerCenterTodos {
     display: flex;
     flex-direction: column;
     place-content: center;
