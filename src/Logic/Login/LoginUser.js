@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import { ButtonPrimary } from "../../Components/Button/ButtonPrimary";
 import { InfoPrimary } from "../../Components/Information/InfoPrimary";
-import { GlobalContext } from "../../Context/global";
+import { useNavigate } from "react-router-dom";
 
 const LoginUser = ({isNew, user }) => {
-  const { setPage } = useContext(GlobalContext);
+  const navigate = useNavigate()
 
   if (isNew) {
     return (
@@ -12,7 +11,7 @@ const LoginUser = ({isNew, user }) => {
         <InfoPrimary text={"Task management & to do list"} />
         <ButtonPrimary
           text={"Let’s Start"}
-          accion={() => setPage("HOME")}
+          accion={() => navigate('/Todos/All')}
         />
       </>
     );
@@ -22,7 +21,7 @@ const LoginUser = ({isNew, user }) => {
       text={"Welcome"}
       user={user}
       label={"look yout tasks"}
-      accion={() => setPage("HOME")}
+      accion={() => navigate('/Todos/All')}
     />
   );
 };

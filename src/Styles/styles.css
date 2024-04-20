@@ -117,6 +117,12 @@
 }
 
 @layer Layout {
+  .Layout_Content {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
   .Layout_Image {
     top: 0;
     left: 0;
@@ -368,7 +374,7 @@
     height: 40px;
     background-color: var(--primary-color-soft);
     border-radius: 4px;
-    z-index: 30;
+    z-index: 3;
     display: grid;
     place-content: center;
     border: 2px solid var(--primary-color);
@@ -556,3 +562,4 @@
     }
   }
 }
+

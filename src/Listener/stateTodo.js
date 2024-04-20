@@ -7,7 +7,7 @@ const stateTodo = (e) => {
   }
   const label = node.querySelector('label');
   const input = node.querySelector('input');
-
+  
   label.classList.remove('hidden')
   input.classList.add('hidden')
 }

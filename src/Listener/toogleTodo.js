@@ -8,7 +8,6 @@ const toogleTodo = (e) => {
   const label = node.querySelector('label');
   const input = node.querySelector('input');
 
-  
   label.classList.toggle('hidden')
   input.classList.toggle('hidden')
   input.focus()

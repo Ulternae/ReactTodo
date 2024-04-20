@@ -1,9 +1,5 @@
-import { useContext } from 'react'
 import iconSelect from '../../Assets/iconSelect.svg'
-import { GlobalContext } from '../../Context/global'
-const SelectIcons = ({ img, isSelect }) => {
-
-  const { setOpenIcons } = useContext(GlobalContext)
+const SelectIcons = ({ img, isSelect, setPortalIcons }) => {
 
   return (
     <div className='SelectIcons_Container'>
@@ -13,11 +9,11 @@ const SelectIcons = ({ img, isSelect }) => {
           <img
             src={iconSelect}
             alt="Select icons types"
-            onClick={() => setOpenIcons(true)}
+            onClick={() => setPortalIcons(true)}
           />
         </div>
       }
     </div>)
-}
+} 
 
 export { SelectIcons }

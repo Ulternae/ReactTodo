@@ -1,6 +1,6 @@
 import { TitleSecondary } from "../../Components/Title/TitleSecondary"
 import { getUser } from "../../Global/storage"
-import { Footer } from "../../Pages/Footer"
+import { FooterPage } from "../../PagesGlobal/Footer"
 
 const AccountView = () => {
   const user = getUser()
@@ -19,7 +19,7 @@ const AccountView = () => {
         </div>
 
       </div>
-      <Footer/>
+      <FooterPage/>
     </>
   )
 }
